@@ -9,9 +9,9 @@
     <context id="Mybatis3Context" targetRuntime="MyBatis3">
         <property name="javaFileEncoding" value="UTF-8"/>
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/transfer?useUnicode=true"
+                        connectionURL="jdbc:mysql://119.23.78.153:3306/transfer?useUnicode=true"
                         userId="root"
-                        password="2014">
+                        password="Zsq20142149">
         </jdbcConnection>
 
         <javaTypeResolver>
