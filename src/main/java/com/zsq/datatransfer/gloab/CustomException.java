@@ -1,6 +1,6 @@
 package com.zsq.datatransfer.gloab;
 
-public class CustomException extends Exception {
+public class  CustomException extends Exception {
 
     private String message;
 

@@ -18,22 +18,22 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.zsq.datatransfer.model" targetProject="D:/pangu_code/transfer/src/main/java">
+        <javaModelGenerator targetPackage="com.zsq.datatransfer.model" targetProject="D:/transfer/transfer_back/src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="mapper" targetProject="D:/pangu_code/transfer/src/main/resources">
+        <sqlMapGenerator targetPackage="mapper" targetProject="D:/transfer/transfer_back/src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zsq.datatransfer.mapper" targetProject="D:/pangu_code/transfer/src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zsq.datatransfer.mapper" targetProject="D:/transfer/transfer_back/src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
-
         <table tableName="transfer_datasource" domainObjectName="TransferDatasource"/>
         <table tableName="transfer_datasource_param" domainObjectName="TransferDatasourceParam"/>
         <table tableName="transfer_file_type" domainObjectName="TransferFileType"/>
         <table tableName="transfer_project" domainObjectName="TransferProject"/>
+        <table tableName="transfer_connnection" domainObjectName="TransferConnnection"/>
     </context>
 </generatorConfiguration>

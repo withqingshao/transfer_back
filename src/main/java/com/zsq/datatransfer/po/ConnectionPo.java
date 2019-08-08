@@ -9,7 +9,7 @@ public class ConnectionPo {
      * type : 1
      */
     private String name;
-    private String type;
+    private Integer type;
     private List<DomainsBean> domains;
 
     public String getName() {
@@ -20,20 +20,20 @@ public class ConnectionPo {
         this.name = name;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public List<DomainsBean> getDomains() {
         return domains;
     }
 
     public void setDomains(List<DomainsBean> domains) {
         this.domains = domains;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
     }
 
     public static class DomainsBean {

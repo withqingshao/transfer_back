@@ -13,6 +13,8 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 @RestController
@@ -22,6 +24,18 @@ public class ProjectController {
 
     @Autowired
     private ProjectService projectService;
+
+   @GetMapping("/{pageNum}/{pageSize}")
+    public RestResult findProject(@PathVariable("pageNum") Integer pageNum, @PathVariable("pageSize") Integer pageSize){
+       return projectService.findProject(pageNum,pageSize);
+    }
+
+
+    @GetMapping("/file")
+    public RestResult getFiles(){
+
+        return projectService.findFiles();
+    }
 
     @PostMapping("/create")
     public RestResult createProject(@RequestBody TransferProject transferProject){
@@ -51,9 +65,13 @@ public class ProjectController {
             log.error(""+e);
             return new RestResult(RestResult.Status.FAILURE,"上传失败");
         }
-        JsonObject jsonObject=new JsonObject();
-        jsonObject.addProperty("name",originalFilename);
-        jsonObject.addProperty("url",finalPath);
-        return new RestResult(jsonObject);
+//        JsonObject jsonObject=new JsonObject();
+//        jsonObject.addProperty("name",originalFilename);
+//        jsonObject.addProperty("url",finalPath);
+//        jsonObject.
+        Map returnData=new HashMap<>();
+        returnData.put("name",originalFilename);
+        returnData.put("url",finalPath);
+        return new RestResult(returnData);
     }
 }
